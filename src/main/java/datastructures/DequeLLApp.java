@@ -4,7 +4,7 @@ package datastructures;
  * Created by srathi on 8/24/16.
  * Deque as a linked list
  */
-class DequeLLApp {
+public class DequeLLApp {
 
     public static void main(String[] args) {
         DequeLinkList theList = new DequeLinkList();
