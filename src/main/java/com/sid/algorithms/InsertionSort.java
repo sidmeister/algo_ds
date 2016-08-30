@@ -1,4 +1,4 @@
-package com.study.sid.datastructures;
+package com.sid.algorithms;
 
 
 /**

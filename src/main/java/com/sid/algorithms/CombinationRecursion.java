@@ -1,4 +1,4 @@
-package com.study.sid.datastructures;
+package com.sid.algorithms;
 
 import java.util.ArrayList;
 import java.util.List;
