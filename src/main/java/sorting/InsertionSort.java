@@ -1,15 +1,16 @@
-package com.sid.algorithms;
+package sorting;
+
 
 /**
  * Created by srathi on 8/1/16.
  */
 
-class ArraySub{
+class ArrayIns{
 
     private long[] a;
     private int numelem;
 
-    public ArraySub(int numelem) {
+    public ArrayIns(int numelem) {
         a = new long[numelem];
         numelem = 0;
     }
@@ -26,30 +27,32 @@ class ArraySub{
         System.out.println("");
     }
 
-    void bubblesort()
+    void insertionsort()
     {
         long temp;
-        for (int outer=numelem -1; outer > 1; outer--)
+        int inner,outer;
+        for (outer=1; outer < numelem; outer++)
         {
-            for (int inner =0; inner < outer; inner++)
-            {
-                if (a[inner] > a[inner+1])
-                {
-                    temp = a[inner];
-                    a[inner] = a[inner + 1];
-                    a[inner + 1] = temp;
-                }
+            temp = a[outer];
+            System.out.println(temp);
+            inner = outer;
+            while (inner > 0 && temp <= a[inner-1] ) {
+                a[inner] = a[inner - 1];
+                inner--;
             }
+            a[inner] = temp;
+
+            }
+
         }
 
     }
 
-}
 
-public class BubbleSort {
+public class InsertionSort {
 
     public static void main(String[] args) {
-        ArraySub arr = new ArraySub(10);
+        ArrayIns arr = new ArrayIns(10);
         arr.insert(77);               // insert 10 items
         arr.insert(99);
         arr.insert(44);
@@ -61,7 +64,7 @@ public class BubbleSort {
         arr.insert(66);
         arr.insert(33);
         arr.display();                // display items
-        arr.bubblesort();
+        arr.insertionsort();
         arr.display();
 
     }

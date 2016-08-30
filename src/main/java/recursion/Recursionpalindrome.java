@@ -1,4 +1,4 @@
-package com.sid.algorithms;
+package recursion;
 
 /**
  * Created by srathi on 8/5/16.

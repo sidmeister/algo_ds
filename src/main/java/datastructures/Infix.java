@@ -1,4 +1,4 @@
-package com.sid.algorithms;
+package datastructures;
 
 import java.io.IOException;
 

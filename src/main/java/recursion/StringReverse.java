@@ -1,4 +1,5 @@
-package com.sid.algorithms;
+package recursion;
+import datastructures.*;
 
 /**
  * Created by srathi on 8/5/16.
@@ -23,7 +24,7 @@ public class StringReverse {
         }
         while(!arr.is_empty())
         {
-            char cpop = (char) arr.pop();
+            Character cpop = (Character) arr.pop();
             output = output + cpop;
         }
         return output;
