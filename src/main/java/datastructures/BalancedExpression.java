@@ -22,7 +22,7 @@ public class BalancedExpression {
                 case ')':
                 case ']':
                     if (!stx.is_empty()) {
-                        char p = (char) stx.pop();
+                        Character p = (Character) stx.pop();
                         if ((c == '}' && p != '{') ||
                             (c == ')' && p != '(') ||
                             (c == ']' && p != '[')

@@ -24,7 +24,7 @@ public class StringReverse {
         }
         while(!arr.is_empty())
         {
-            char cpop = (char) arr.pop();
+            Character cpop = (Character) arr.pop();
             output = output + cpop;
         }
         return output;
