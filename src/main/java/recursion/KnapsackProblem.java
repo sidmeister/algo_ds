@@ -22,7 +22,7 @@ public class KnapsackProblem {
             System.out.print("Answer : " + given_weights[index] + " ");
             complete = true;
         }
-        if (curr_wt < tgt_weight)
+        else if (curr_wt < tgt_weight)
         {
             System.out.println("tgt : " + tgt_weight + "," + "curr: " + given_weights[index] + " is too small");
             complete = knapsack(tgt_weight - curr_wt, index + 1);
@@ -33,7 +33,7 @@ public class KnapsackProblem {
                 complete = knapsack(tgt_weight, i);
             }
         }
-        if (given_weights[index] > tgt_weight) complete = knapsack(tgt_weight, index +1);
+        else  complete = knapsack(tgt_weight, index +1);
         return complete;
     }
 
