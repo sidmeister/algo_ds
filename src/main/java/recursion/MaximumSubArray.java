@@ -67,7 +67,7 @@ public class MaximumSubArray {
         {
             sum += arr[i];
            // System.out.println(sum);
-            //leftmaxsum = max(sum , leftmaxsum);
+            leftmaxsum = max(sum , leftmaxsum);
         }
         //System.out.println("left sum: " + leftmaxsum);
         sum = 0;
