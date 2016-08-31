@@ -1,5 +1,6 @@
 package sorting;
-import datastructures.*;
+import linklist.DequeLinkList;
+
 /**
  * Created by srathi on 8/23/16.
  */

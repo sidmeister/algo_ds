@@ -1,4 +1,4 @@
-package datastructures;
+package linklist;
 
 /**
  * Created by srathi on 8/30/16.

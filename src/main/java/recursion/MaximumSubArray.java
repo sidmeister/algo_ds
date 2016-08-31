@@ -28,44 +28,71 @@ public class MaximumSubArray {
                 }
             }
         }
+        System.out.println(maxsum);
        System.arraycopy(arr, start, mss,0, end - start + 1);
         return mss;
     }
+
 
     /**
      * This is the divide and conquer method. In this we divide the problem.
      * into subproblem and solve the subproblem
      */
 
-    public static int[] dc(int[] arr, int low, int high)
-    {
-        int mid = (int) (high - low) / 2;
-        int maxsum = Integer.MIN_VALUE, sum = 0;
-        System.out.println("low:" + low);
-        System.out.println("high: " + high);
-        //System.out.println(mid);
-        if (new Integer(1).equals((int) (high - low ))) {
-            System.out.println("high - low = 1");
-            return arr;
-        }
-        arr = dc(arr,low ,mid); //left mss
-            for (int i = high; i > low; i--) {
-                sum += arr[i];
-                if (sum > maxsum) sum = maxsum;
-            }
+    // A utility funtion to find maximum of two integers
+    public static int max(int a, int b) {
+        return (a > b)? a : b; }
 
-        //arr = dc(arr,mid+1,high); //right mss
-        return  arr;
+    // A utility funtion to find maximum of three integers
+    public static int max(int a, int b, int c) { return max(max(a, b), c); }
+
+    public static int dc(int[] arr, int low, int high)
+    {
+        int left_mss = 0 ;
+        int right_mss = 0;
+        int mid = (int) (low + high) / 2;
+//        System.out.println("mid: " + mid);
+//        System.out.println("low: " + low) ;
+//        System.out.println("high: " + high);
+        int leftmaxsum = Integer.MIN_VALUE, sum = 0 , rightmaxsum = Integer.MIN_VALUE;
+        if ( new Integer(low).equals(high) ) {
+//            System.out.println("Returning");
+            return arr[0];
+        }
+        left_mss = dc(arr,low ,mid); //left mss
+        right_mss = dc(arr , mid + 1, high); //right mss
+        //calculate crossing sum
+        //System.out.println("mid: " + mid);
+        for (int i = mid ; i >=0 ; i--)
+        {
+            sum += arr[i];
+           // System.out.println(sum);
+            //leftmaxsum = max(sum , leftmaxsum);
+        }
+        //System.out.println("left sum: " + leftmaxsum);
+        sum = 0;
+        for (int i = mid + 1  ; i <= high ; i++)
+        {
+            sum += arr[i];
+            rightmaxsum = max(sum , rightmaxsum);
+        }
+        //System.out.println("right sum: " + rightmaxsum);
+
+        //System.out.println(max(left_mss , right_mss, leftmaxsum + rightmaxsum ));
+        return  max(left_mss , right_mss, leftmaxsum + rightmaxsum );
     }
 
     public static void main(String[] args) {
+        //int[] arr = new int[]{-2,1,-3,4,-1,2,1,-5,4};
         int[] arr = new int[]{13,-3,-25,20,3,-16,-23,18,20,-7,12,-5,-22,15,4,7};
         int mss [];
-        mss = bruteforce(arr);
+        int ans = 0;
+        //mss = bruteforce(arr);
 //        for (int k =0; k<mss.length; k++)
 //            System.out.print(mss[k] + " ");
-        mss = dc(arr,0,arr.length);
-        for (int k =0; k<mss.length; k++)
-            System.out.print(mss[k] + " ");
+        ans = dc(arr,0,arr.length - 1);
+        System.out.println(ans);
+//        for (int k =0; k<mss.length; k++)
+//            System.out.print(mss[k] + " ");
     }
 }
