@@ -1,4 +1,4 @@
-package com.study.sid.datastructures;
+package recursion;
 
 /**
  * Created by srathi on 8/22/16.

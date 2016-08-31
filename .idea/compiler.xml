@@ -22,11 +22,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="javaStudy" />
+        <module name="algo_ds" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="javaStudy" target="1.7" />
+      <module name="algo_ds" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>

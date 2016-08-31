@@ -1,4 +1,4 @@
-package com.study.sid.datastructures;
+package datastructures;
 
 /**
  * Created by srathi on 8/9/16.
@@ -22,7 +22,7 @@ public class BalancedExpression {
                 case ')':
                 case ']':
                     if (!stx.is_empty()) {
-                        char p = (char) stx.pop();
+                        Character p = (Character) stx.pop();
                         if ((c == '}' && p != '{') ||
                             (c == ')' && p != '(') ||
                             (c == ']' && p != '[')

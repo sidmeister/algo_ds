@@ -1,4 +1,4 @@
-package com.study.sid.datastructures;
+package datastructures;
 
 /**
  * Created by srathi on 8/5/16.
@@ -49,7 +49,7 @@ public class Stack<T> {
         System.out.println(a.is_full());
         while (!a.is_empty())
         {
-            int b = (int)a.pop();
+            Integer b = (Integer) a.pop();
             System.out.println(b);
         }
 
@@ -59,7 +59,7 @@ public class Stack<T> {
         System.out.println(b.is_full());
         while (!b.is_empty())
         {
-            char c = (char)b.pop();
+            Character c = (Character) b.pop();
             System.out.println(c);
         }
 

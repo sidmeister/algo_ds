@@ -1,4 +1,4 @@
-package com.study.sid.datastructures;
+package datastructures;
 
 /**
  * Created by srathi on 8/9/16.

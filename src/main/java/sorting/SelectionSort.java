@@ -1,4 +1,4 @@
-package com.study.sid.datastructures;
+package sorting;
 
 /**
  * Created by srathi on 8/1/16.

@@ -1,5 +1,5 @@
-package com.study.sid.datastructures;
-
+package sorting;
+import datastructures.*;
 /**
  * Created by srathi on 8/23/16.
  */
@@ -7,7 +7,7 @@ class RadixSortApp {
 
 
     public static void main(String[] args) {
-        int[] unsorted_Array = new int[100]{100,65,87,54,523,56,76};
+        int[] unsorted_Array = new int[]{100,65,87,54,523,56,76};
         for (int n=0;n<unsorted_Array.length;n++)
         {
             System.out.print(unsorted_Array[n] + " ");

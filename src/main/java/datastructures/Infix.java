@@ -1,9 +1,6 @@
-package com.study.sid.datastructures;
+package datastructures;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.*;
 
 /**
  * Created by srathi on 8/11/16.
