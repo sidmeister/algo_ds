@@ -27,32 +27,26 @@ public class MinCoin {
 
 
 
-    public static int dp_count(int sum,int [] coin, int size)
+    public static void dp_count(int sum,int [] coin, int size)
     {
         /*
          We will create an array with the columns as the possible states
          and rows as the coin denominations
          */
 
-        int[][] table = new int[size][sum + 1];
-
+        int[] table = new int[sum + 1];
+        int[] R = new int[sum + 1];
         /*
             let us initialize the column 0 (state 0)
          */
 
+        table[0] = 0;
 
-
-        for (int i =0; i < size ; i++)
-            table[i][0] = 0;
-
-        for (int j =0; j < size ; j++) {
-            for (int i = 1; i <= sum ; i++) {
-                table[j][i] = Integer.MAX_VALUE;
-            }
+        for (int i = 1; i <= sum ; i++) {
+                table[i] = Integer.MAX_VALUE;
+                R[i] = -1;
         }
 
-
-        int[] R = new int[sum + 1];
         for (int j = 0; j < size; j ++)
         {
           //  System.out.print("\n");
@@ -60,48 +54,44 @@ public class MinCoin {
             {
                 if (i >= coin[j])
                 {
-                    if (j == 0)
-                        table[j][i] = Math.min(table[j][i], table[j][i - coin[j]] + 1);
-                    else {
-                        table[j][i] = Math.min(table[j - 1][i], table[j][i - coin[j]] + 1);
-                        if (table[j][i] == table[j][i - coin[j]] + 1) {
-                            R[j] = coin[j];
+                    if ((table[i - coin[j]] + 1) < table[i])
+                         {
+                        table[i] = table[i - coin[j]] + 1;
+                             R[i] = j;
                         }
                     }
-
-                }
-                else {
-                    if (j == 0) {
-                        table[j][i] = Integer.MAX_VALUE;
-                    }
-                    else
-                    {
-                        table[j][i] = table[j - 1][i];
-                    }
-                }
-            //    System.out.print(table[j][i] + " ");
 
             }
         }
         System.out.print("\n");
 
-        for (int j = 0; j < size; j++) {
-            for (int i = 1; i < sum + 1; i++) {
-                System.out.print(table[j][i] + " ");
-            }
-            System.out.print("\n");
+        for (int i = 1; i < sum + 1; i++) {
+                System.out.print(R[i] + " ");
         }
 
-        return 0;
-
+        printCoinCombination(R, coin);
     }
 
 
+    private static void  printCoinCombination(int R[], int coins[]) {
+        if (R[R.length - 1] == -1) {
+            System.out.print("No solution is possible");
+            return;
+        }
+        int start = R.length - 1;
+        System.out.print("\n");
+        System.out.print("Coins used to form total ");
+        while ( start != 0 ) {
+            int j = R[start];
+            System.out.print(coins[j] + " ");
+            start = start - coins[j];
+        }
+        System.out.print("\n");
+    }
 
     public static void main(String[] args) {
         int sum = 30;
         int[] coin = new int[]{5,10,25};
-        int count = dp_count(sum,coin,coin.length);
-        //System.out.println(count);
+        dp_count(sum,coin,coin.length);
     }
 }
