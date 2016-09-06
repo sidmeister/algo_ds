@@ -58,13 +58,46 @@ public class MaximumSubArray {
         return  arr;
     }
 
+
+    /**
+     * This is the kadane version
+     */
+
+    public static int[] kadane(int[] arr, int size)
+    {
+        int maxsum = Integer.MIN_VALUE, current_sum = 0;
+        int[] mss = new int[arr.length];
+        int start_index= 0,end_index=0;
+        for (int i = 0; i < arr.length; i++)
+        {
+            if (new Integer(0).equals(current_sum)) start_index = i;
+            current_sum += arr[i];
+                if (current_sum > maxsum)
+                {
+                    maxsum = current_sum;
+                    end_index = i;
+                }
+                if (current_sum < 0) {
+                    current_sum = 0;
+                }
+        }
+        System.arraycopy(arr, start_index, mss,0, end_index - start_index + 1);
+        return mss;
+    }
+
+
     public static void main(String[] args) {
         int[] arr = new int[]{13,-3,-25,20,3,-16,-23,18,20,-7,12,-5,-22,15,4,7};
         int mss [];
         mss = bruteforce(arr);
+        for (int k =0; k<mss.length; k++)
+            System.out.print(mss[k] + " ");
+        System.out.print("\n");
+//        mss = dc(arr,0,arr.length);
 //        for (int k =0; k<mss.length; k++)
 //            System.out.print(mss[k] + " ");
-        mss = dc(arr,0,arr.length);
+        int sum = 0;
+        mss = kadane(arr , arr.length);
         for (int k =0; k<mss.length; k++)
             System.out.print(mss[k] + " ");
     }
