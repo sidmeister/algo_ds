@@ -23,11 +23,10 @@ public class Node<T  extends Comparable<T>>  implements Comparable<Node <T>> {
 
     public int compareTo(T other) {
         return  (this.data.compareTo(other));
-
     }
 
     @Override
     public int compareTo(Node<T> other) {
-        return this.getData().compareTo(other.data);
+        return this.getData().compareTo(other.getData());
     }
 }

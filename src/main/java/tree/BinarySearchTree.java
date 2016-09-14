@@ -5,7 +5,7 @@ package tree;
  */
 public class BinarySearchTree {
 
-    Node root; //Tree class only nends to know about the root
+    Node root; //Tree class only needs to know about the root
 
     public BinarySearchTree() {
         this.root = null;
@@ -26,6 +26,11 @@ public class BinarySearchTree {
                 return false;
         }
         return true;
+
+    }
+
+    public void displayTreeInorder()
+    {
 
     }
 

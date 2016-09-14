@@ -17,8 +17,8 @@ public class AlgebraicExpression {
                 Node tNode = new Node(c);
                 Node right = Stx.pop();
                 Node left = Stx.pop();
-                tNode.leftChild = right;
-                tNode.rightChild = left;
+                tNode.rightChild = right;
+                tNode.leftChild = left;
                 Stx.push(tNode);
             }
             else

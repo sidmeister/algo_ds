@@ -26,7 +26,6 @@ public class Stack<T> {
         return arr[top--];
 
     }
-
     public boolean is_empty()
     {
         return top == -1;
@@ -42,27 +41,20 @@ public class Stack<T> {
         return arr[top];
     }
 
-    public static void main(String[] args) {
-        Stack a  = new Stack(2);
-        a.push(10);
-        a.push(20);
-        System.out.println(a.is_full());
-        while (!a.is_empty())
-        {
-            Integer b = (Integer) a.pop();
-            System.out.println(b);
-        }
+    public T peekN(int n)  // return item at index n
+    { return arr[n]; }
 
-        Stack b  = new Stack(2);
-        b.push('b');
-        b.push('c');
-        System.out.println(b.is_full());
-        while (!b.is_empty())
-        {
-            Character c = (Character) b.pop();
-            System.out.println(c);
-        }
+    public int size()         // return size
+    { return top+1; }
 
+    public void displayStack()
+    {
+        System.out.print("Stack (bottom-->top): ");
+        for(int j=0; j<size(); j++)
+        {
+            System.out.print( peekN(j) );
+            System.out.print(' ');
+        }
+        System.out.println("");
     }
-
 }

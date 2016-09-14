@@ -1,65 +1,18 @@
 package stack_queue;
-
 import java.io.IOException;
 
 /**
- * Created by srathi on 8/11/16.
+ * Created by Siddharth on 9/13/2016.
  */
-
+public class InToPost {
 
     // infix.java
 // converts infix arithmetic expressions to postfix
 // to run this program: C>java InfixApp
-              // for I/O
+    // for I/O
     ////////////////////////////////////////////////////////////////
-    class StackX
-    {
-        private int maxSize;
-        private char[] stackArray;
-        private int top;
-        //--------------------------------------------------------------
-        public StackX(int s)       // constructor
-        {
-            maxSize = s;
-            stackArray = new char[maxSize];
-            top = -1;
-        }
-        //--------------------------------------------------------------
-        public void push(char j)  // put item on top of stack
-        { stackArray[++top] = j; }
-        //--------------------------------------------------------------
-        public char pop()         // take item from top of stack
-        { return stackArray[top--]; }
-        //--------------------------------------------------------------
-        public char peek()        // peek at top of stack
-        { return stackArray[top]; }
-        //--------------------------------------------------------------
-        public boolean isEmpty()  // true if stack is empty
-        { return (top == -1); }
-        //-------------------------------------------------------------
-        public int size()         // return size
-        { return top+1; }
-        //--------------------------------------------------------------
-        public char peekN(int n)  // return item at index n
-        { return stackArray[n]; }
-        //--------------------------------------------------------------
-        public void displayStack(String s)
-        {
-            System.out.print(s);
-            System.out.print("Stack (bottom-->top): ");
-            for(int j=0; j<size(); j++)
-            {
-                System.out.print( peekN(j) );
-                System.out.print(' ');
-            }
-            System.out.println("");
-        }
-//--------------------------------------------------------------
-    }  // end class StackX
     ////////////////////////////////////////////////////////////////
-    class InToPost                  // infix to postfix conversion
-    {
-        private StackX theStack;
+        private Stack theStack;
         private String input;
         private String output = "";
         //--------------------------------------------------------------
@@ -67,7 +20,7 @@ import java.io.IOException;
         {
             input = in;
             int stackSize = input.length();
-            theStack = new StackX(stackSize);
+            theStack = new Stack(stackSize);
         }
         //--------------------------------------------------------------
         public String doTrans()      // do translation to postfix
@@ -75,7 +28,7 @@ import java.io.IOException;
             for(int j=0; j<input.length(); j++)      // for each char
             {
                 char ch = input.charAt(j);            // get it
-                theStack.displayStack("For "+ch+" "); // *diagnostic*
+                theStack.displayStack(); // *diagnostic*
                 switch(ch)
                 {
                     case '+':               // it's + or -
@@ -97,20 +50,20 @@ import java.io.IOException;
                         break;
                 }  // end switch
             }  // end for
-            while( !theStack.isEmpty() )     // pop remaining opers
+            while( !theStack.is_empty() )     // pop remaining opers
             {
-                theStack.displayStack("While ");  // *diagnostic*
+                theStack.displayStack();  // *diagnostic*
                 output = output + theStack.pop(); // write to output
             }
-            theStack.displayStack("End   ");     // *diagnostic*
+            theStack.displayStack();     // *diagnostic*
             return output;                   // return postfix
         }  // end doTrans()
         //--------------------------------------------------------------
         public  void gotOper(char opThis, int prec1)
         {                                // got operator from input
-            while( !theStack.isEmpty() )
+            while( !theStack.is_empty() )
             {
-                char opTop = theStack.pop();
+                char opTop = (Character) theStack.pop();
                 if( opTop == '(' )            // if it's a '('
                 {
                     theStack.push(opTop);      // restore '('
@@ -138,9 +91,9 @@ import java.io.IOException;
         //--------------------------------------------------------------
         public  void gotParen(char ch)
         {                             // got right paren from input
-            while( !theStack.isEmpty() )
+            while( !theStack.is_empty() )
             {
-                char chx = theStack.pop();
+                char chx = (Character)theStack.pop();
                 if( chx == '(' )           // if popped '('
                     break;                  // we're done
                 else                       // if popped operator
@@ -150,34 +103,3 @@ import java.io.IOException;
 //--------------------------------------------------------------
     }  // end class InToPost
     ////////////////////////////////////////////////////////////////
-    class InfixApp
-    {
-        public static void main(String[] args) throws IOException
-        {
-            String input, output;
-            System.out.println(Double.MAX_VALUE);
-            //while(true)
-           // {
-               // System.out.print("Enter infix: ");
-               // System.out.flush();
-                input = getString();         // read a string from kbd
-               // if( input.equals("") )       // quit if [Enter]
-                //    break;
-                // make a translator
-                InToPost theTrans = new InToPost(input);
-                output = theTrans.doTrans(); // do the translation
-                System.out.println("Postfix is " + output + '\n');
-           // }  // end while
-        }  // end main()
-        //--------------------------------------------------------------
-        public static String getString() throws IOException
-        {
-//            InputStreamReader isr = new InputStreamReader(System.in);
-//            BufferedReader br = new BufferedReader(isr);
-            String s =  "(A-C+B)"; //br.readLine();
-            return s;
-        }
-//--------------------------------------------------------------
-    }  // end class InfixApp
-////////////////////////////////////////////////////////////////
-
