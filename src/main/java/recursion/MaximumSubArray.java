@@ -12,7 +12,9 @@ public class MaximumSubArray {
      */
     public static int[] bruteforce(int[] arr)
     {
-        int start=0 ,end =0, maxsum = Integer.MIN_VALUE, sum = 0;
+        int left_start=0 ,left_end =0, maxsum = Integer.MIN_VALUE, sum = 0;
+        int right_start=0, right_end =0;
+        int start =0, end = 0;
         int[] mss = new int[arr.length];
 
         for (int i=0;i<arr.length;i++)
@@ -49,6 +51,9 @@ public class MaximumSubArray {
     public static int dc(int[] arr, int low, int high)
     {
         int left_mss = 0 ;
+        int left_start=0 ,left_end =0;
+        int right_start=0, right_end =0;
+        int start = 0 , end = 0, ans = 0;
         int right_mss = 0;
         int mid = (int) (low + high) / 2;
 //        System.out.println("mid: " + mid);
@@ -63,20 +68,56 @@ public class MaximumSubArray {
         right_mss = dc(arr , mid + 1, high); //right mss
         //calculate crossing sum
         //System.out.println("mid: " + mid);
-        for (int i = mid ; i >=0 ; i--)
-        {
+        for (int i = mid ; i >=0 ; i--) {
             sum += arr[i];
-           // System.out.println(sum);
-            leftmaxsum = max(sum , leftmaxsum);
+            // System.out.println(sum);
+            //leftmaxsum = max(sum , leftmaxsum);
+            if (sum > leftmaxsum) {
+                leftmaxsum = sum;
+                left_end = i;
+                left_start = left_end;
+            }
         }
-        //System.out.println("left sum: " + leftmaxsum);
+//            System.out.println("start:" + left_start);
+//            System.out.println("end:" + left_end);
         sum = 0;
         for (int i = mid + 1  ; i <= high ; i++)
         {
             sum += arr[i];
-            rightmaxsum = max(sum , rightmaxsum);
+            //rightmaxsum = max(sum , rightmaxsum);
+            if (sum > rightmaxsum) {
+                rightmaxsum = sum;
+                right_start = i;
+                right_end = right_start;
+            }
         }
+
+//        System.out.println("start:" + right_start);
+//        System.out.println("end:" + right_end);
         //System.out.println("right sum: " + rightmaxsum);
+
+        if (left_mss > right_mss)
+        {
+            start = left_start;
+            end = left_end;
+            ans = left_mss;
+        }
+        else
+        {
+            start = right_start;
+            end = right_end;
+            ans = right_mss;
+        }
+
+
+        if ((leftmaxsum + rightmaxsum) > ans)
+        {
+            start = left_start;
+            end = right_end;
+        }
+
+        System.out.println("start:" + start);
+        System.out.println("end:" + end);
 
         //System.out.println(max(left_mss , right_mss, leftmaxsum + rightmaxsum ));
         return  max(left_mss , right_mss, leftmaxsum + rightmaxsum );
