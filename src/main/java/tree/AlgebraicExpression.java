@@ -1,5 +1,5 @@
 package tree;
-import datastructures.*;
+import stack_queue.*;
 
 /**
  * Created by Siddharth on 8/27/2016.

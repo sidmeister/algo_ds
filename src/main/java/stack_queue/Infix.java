@@ -1,4 +1,4 @@
-package datastructures;
+package stack_queue;
 
 import java.io.IOException;
 

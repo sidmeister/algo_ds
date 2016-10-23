@@ -1,4 +1,4 @@
-package datastructures;
+package stack_queue;
 
 /**
  * Created by srathi on 8/5/16.

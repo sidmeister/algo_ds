@@ -1,5 +1,5 @@
 package recursion;
-import datastructures.*;
+import stack_queue.*;
 
 /**
  * Created by srathi on 8/5/16.
