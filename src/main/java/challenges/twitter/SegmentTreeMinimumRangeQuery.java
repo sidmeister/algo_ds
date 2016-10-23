@@ -1,8 +1,4 @@
-package tree;
-
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+package challenges.twitter;
 
 /**
  * Created by srathi on 9/19/16.
@@ -22,7 +18,7 @@ import java.util.Map;
             double distred = Math.pow(this.red - input.red,2);
             double distblue = Math.pow(this.blue - input.blue,2);
             double distgreen = Math.pow(this.green - input.green,2);
-            return  Math.sqrt(distred + distblue + distgreen);;
+            return  Math.sqrt(distred + distblue + distgreen);
 
         }
 

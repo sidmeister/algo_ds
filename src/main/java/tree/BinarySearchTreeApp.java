@@ -7,12 +7,12 @@ public class BinarySearchTreeApp {
 
     public static void main(String[] args) {
         BinarySearchTree binaryTree = new BinarySearchTree();
-        binaryTree.addNode(10);
-        binaryTree.addNode(20);
-        binaryTree.addNode(30);
-        binaryTree.addNode(15);
-        binaryTree.addNode(5);
-        binaryTree.addNode(8);
+        binaryTree.addNode(4);
+        binaryTree.addNode(2);
+        binaryTree.addNode(7);
+        binaryTree.addNode(1);
+        binaryTree.addNode(3);
+        binaryTree.addNode(6);
         if(binaryTree.findNode(8))
             System.out.println("node exists");
     }
