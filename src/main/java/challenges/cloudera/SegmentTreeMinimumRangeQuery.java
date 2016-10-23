@@ -1,4 +1,4 @@
-package challenges.twitter;
+package challenges.cloudera;
 
 /**
  * Created by srathi on 9/19/16.

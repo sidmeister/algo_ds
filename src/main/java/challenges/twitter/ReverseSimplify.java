@@ -1,4 +1,4 @@
-package challenges.cloudera;
+package challenges.twitter;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
