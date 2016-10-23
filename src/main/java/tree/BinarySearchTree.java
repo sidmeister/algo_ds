@@ -14,11 +14,9 @@ public class BinarySearchTree {
     public boolean findNode(int temp)
     {
         Node current = root;
-        Node tNode = new Node(temp);
-        while(current.compareTo(tNode)!=0)
+        while(current.data != temp)
         {
-            System.out.println(current.getData());
-            if(current.compareTo(tNode) == 1)
+            if(current.data > temp)
                 current = current.leftChild;
             else
                 current = current.rightChild;
@@ -29,14 +27,31 @@ public class BinarySearchTree {
 
     }
 
+    public Node lowestCommonAncestor(Node root, int val1, int val2)
+    {
+
+        if (root.data > val1 && root.data < val2){
+            return root;
+        }
+        else if (root.data > val1 && root.data > val2){
+            return lowestCommonAncestor(root.leftChild, val1, val2);
+        }
+        else if (root.data < val1 && root.data < val2){
+            return lowestCommonAncestor(root.rightChild, val1, val2);
+        }
+
+        return root;
+    }
+
     public void addNode(int temp)
     {
-        Node newNode = new Node(temp);
+        Node newNode = new Node();
+        newNode.data = temp;
        // newNode.data = temp;
         if (root ==null) //root is empty insert here
         {
             root = newNode;
-            System.out.println("Added root " + root.getData());
+            System.out.println("Added root " + root.data);
         }
         else
         {
@@ -44,12 +59,12 @@ public class BinarySearchTree {
             while (true)
             {
                 Node parent = current;
-                if (current.compareTo(temp) >= 0) //temp is lower than temp so move to left subtree
+                if (current.data >= temp) //temp is lower than temp so move to left subtree
                 {
                     current = current.leftChild;
                     if (current == null) //we have reached where to insert the node
                     {
-                        System.out.println("Adding " + newNode.getData() + " to left of " + parent.getData());
+                        System.out.println("Adding " + temp + " to left of " + parent.data);
                         parent.leftChild = newNode;
                         return;
                     }
@@ -59,7 +74,7 @@ public class BinarySearchTree {
                     current = current.rightChild;
                     if (current == null) //we have reached where to insert the node
                     {
-                        System.out.println("Adding "  + newNode.getData() + " to right of " + parent.getData());
+                        System.out.println("Adding "  + newNode.data + " to right of " + parent.data);
                         parent.rightChild = newNode;
                         return;
                     }

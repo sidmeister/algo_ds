@@ -13,7 +13,9 @@ public class BinarySearchTreeApp {
         binaryTree.addNode(1);
         binaryTree.addNode(3);
         binaryTree.addNode(6);
-        if(binaryTree.findNode(8))
+        if (binaryTree.findNode(8))
             System.out.println("node exists");
+        Node lca = binaryTree.lowestCommonAncestor(binaryTree.root,1, 7);
+        System.out.println("lca is: " + lca.data);
     }
 }
