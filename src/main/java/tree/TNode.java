@@ -1,15 +1,15 @@
 package tree;
 
 /**
- * Created by Ashu on 8/27/2016.
+ * Created by srathi on 8/27/2016.
  */
-public class TNode<T  extends Comparable<T>>  implements Comparable<Node <T>> {
+public class TNode<T  extends Comparable<T>>  implements Comparable<TNode <T>> {
 
     private T data;
-    Node<T> leftChild; //leftchild
-    Node<T> rightChild; //rightChild
+    TNode<T> leftChild; //leftchild
+    TNode<T> rightChild; //rightChild
 
-    public Node(T data) {
+    public TNode(T data) {
         this.data = data;
     }
 
@@ -27,7 +27,7 @@ public class TNode<T  extends Comparable<T>>  implements Comparable<Node <T>> {
     }
 
     @Override
-    public int compareTo(Node<T> other) {
+    public int compareTo(TNode<T> other) {
         return this.getData().compareTo(other.data);
     }
 }
