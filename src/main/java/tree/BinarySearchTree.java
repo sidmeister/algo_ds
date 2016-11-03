@@ -67,6 +67,42 @@ public class BinarySearchTree {
         }
     }
 
+    public static void topView(Node root)
+    {
+        Stack<Node> stk = new Stack<>();
+        Node temp = root;
+        if (root!=null)
+            stk.push(root);
+        while(root.leftChild!=null) {
+            stk.push(root.leftChild);
+            root = root.leftChild;
+        }
+        while(!stk.isEmpty())
+            System.out.print(stk.pop().data + " ");
+        root = temp;
+        LinkedList<Node> queue = new LinkedList<>();
+        while(root.rightChild!=null) {
+            queue.add(root.rightChild);
+            root = root.rightChild;
+        }
+        while(!queue.isEmpty())
+            System.out.print(queue.pop().data);
+    }
+
+    public int getHeight(Node root)
+    {
+        if (root == null)
+            return -1;
+        int leftheight = getHeight(root.leftChild);
+        int rightheight = getHeight(root.rightChild);
+        if (leftheight > rightheight)
+            return leftheight +1;
+        return rightheight +1;
+
+
+
+    }
+
     public void levelOrder(Node localRoot)
     {
         System.out.print("\n");
@@ -155,6 +191,9 @@ public class BinarySearchTree {
         System.out.println("lca is: " + lca.data);
         binaryTree.inOrder(binaryTree.root);
         binaryTree.levelOrder(binaryTree.root);
+        System.out.print("\n");
+        System.out.println(binaryTree.getHeight(binaryTree.root));
+        topView(binaryTree.root);
     }
 
 
