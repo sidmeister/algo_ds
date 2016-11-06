@@ -39,12 +39,12 @@ import java.util.*;
 
  */
 
-class DArray
+class TArray
 {
     private Obj[] theArray; // ref to array theArray
     private int nElems; // number of data items
     //-----------------------------------------------------------
-    public DArray(Obj[] arr) // constructor
+    public TArray(Obj[] arr) // constructor
     {
         theArray = arr; // create array
         nElems = arr.length;
@@ -150,10 +150,10 @@ public class SortByFrequencyLeetCode {
         }
 
 
-        DArray dArray = new DArray(arr);
-        dArray.display();
+        TArray dArray = new TArray(arr);
+        //dArray.display();
         arr = dArray.mergeSort();
-        dArray.display();
+        //dArray.display();
         for (int k=0; k<arr.length; k++)
         {
             Obj temp = arr[k];
