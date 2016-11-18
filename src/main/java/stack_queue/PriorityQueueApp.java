@@ -2,6 +2,11 @@ package stack_queue;
 
 /**
  * Created by srathi on 11/18/16.
+ * priority queue implemented as an ordered array.
+ *
+ * Pro : removal is accomplished in fast O(1) time,
+ * Con : insertion requires slow O(N) time, because an average of half the items in the array must be moved to insert the new one in order.
+ *
  */
 
 class PriorityQueue
