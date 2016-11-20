@@ -1,4 +1,4 @@
-package challenges.twitter;
+package misc;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 /**
  * Created by srathi on 10/22/16.
  */
-public class LogProcessing {
+public class LogProcessingTwitter {
         public static void main(String[] args) throws Exception {
             Map<String, Double> all_Req = new TreeMap<>();
             Map<String, Double> non500_requests = new TreeMap<>();

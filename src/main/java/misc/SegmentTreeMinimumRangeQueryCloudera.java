@@ -1,4 +1,4 @@
-package challenges.cloudera;
+package misc;
 
 /**
  * Created by srathi on 9/19/16.
@@ -72,11 +72,11 @@ package challenges.cloudera;
                 mindist = distpuregreen;
             if ( distpureblue < mindist)
                 mindist = distpureblue;
-            System.out.println(pureblack.distance);
-            System.out.println(purewhite.distance);
-            System.out.println(purered.distance);
-            System.out.println(puregreen.distance);
-            System.out.println(pureblue.distance);
+//            System.out.println(pureblack.distance);
+//            System.out.println(purewhite.distance);
+//            System.out.println(purered.distance);
+//            System.out.println(puregreen.distance);
+//            System.out.println(pureblue.distance);
             System.out.println(mindist);
 
         }

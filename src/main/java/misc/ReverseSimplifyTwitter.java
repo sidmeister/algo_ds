@@ -1,4 +1,4 @@
-package challenges.twitter;
+package misc;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 /**
  * Created by srathi on 10/22/16.
  */
-public class ReverseSimplify {
+public class ReverseSimplifyTwitter {
         public static void main (String[] args) throws Exception
         {
             String line;
