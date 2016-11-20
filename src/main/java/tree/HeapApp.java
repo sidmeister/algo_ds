@@ -49,6 +49,12 @@ class Heap
         return true; // success
     }
 
+
+    /*
+    heap operations all operate in O(logN) time.
+    */
+
+
     private void trickleUp(int index)
     {
 
@@ -94,6 +100,10 @@ class Heap
 
         return true;
     }
+
+    /*
+    heap operations all operate in O(logN) time.
+    */
 
     private void trickleDown(int index)
     {
