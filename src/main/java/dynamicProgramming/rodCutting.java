@@ -16,7 +16,7 @@ public class rodCutting {
         {
           max_price =  max(max_price, arr[i] + rec_cutrod(arr, length -i));
         }
-        System.out.println(max_price);
+       // System.out.println(max_price);
         return max_price;
     }
 
@@ -43,6 +43,15 @@ public class rodCutting {
         return max_price;
     }
 
+    public static int maxValue(int price[]){
+        int max[] = new int[price.length+1];
+        for(int i=1; i <= price.length; i++){
+            for(int j=i; j <= price.length; j++){
+                max[j] = Math.max(max[j], max[j-i] + price[i-1]);
+            }
+        }
+        return max[price.length];
+    }
 
 
     public static int max(int a, int b)
@@ -52,13 +61,16 @@ public class rodCutting {
 
     public static void main(String[] args) {
         long startTimeMillis = System.currentTimeMillis();
-        int price =   rec_cutrod(arr,4);
+        int price =   rec_cutrod(arr,9);
 //        long endTimeMillis = System.currentTimeMillis();
 //        System.out.println(endTimeMillis - startTimeMillis);
         System.out.println(price);
         int[] r = new int[arr.length];
-        price =   memo_cutrod(arr,r,4);
+        price =   memo_cutrod(arr,r,9);
 //        System.out.println("memoization top down took:" + (endTimeMillis - startTimeMillis));
         System.out.println(price);
+         price = maxValue(arr);
+        System.out.println(price);
+
     }
 }
