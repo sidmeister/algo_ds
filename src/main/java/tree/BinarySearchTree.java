@@ -57,15 +57,6 @@ public class BinarySearchTree {
         }
     }
 
-    public void inOrder(Node localRoot)
-    {
-        if (localRoot != null)
-        {
-            inOrder(localRoot.leftChild);
-            System.out.print(localRoot.data + " ");
-            inOrder(localRoot.rightChild);
-        }
-    }
 
     public static void topView(Node root)
     {
@@ -103,38 +94,6 @@ public class BinarySearchTree {
 
     }
 
-    public void levelOrder(Node localRoot)
-    {
-        System.out.print("\n");
-        LinkedList<Node> list = new LinkedList<>();
-        while (localRoot != null)
-        {
-            System.out.print(localRoot.data + " ");
-            if (localRoot.leftChild != null)
-                list.add(localRoot.leftChild);
-            if (localRoot.rightChild != null)
-                list.add(localRoot.rightChild);
-            localRoot = list.poll();
-
-
-        }
-    }
-
-    public Node lowestCommonAncestor(Node root, int val1, int val2)
-    {
-
-        if (root.data > val1 && root.data < val2){
-            return root;
-        }
-        else if (root.data > val1 && root.data > val2){
-            return lowestCommonAncestor(root.leftChild, val1, val2);
-        }
-        else if (root.data < val1 && root.data < val2){
-            return lowestCommonAncestor(root.rightChild, val1, val2);
-        }
-
-        return root;
-    }
 
     public void addNode(int temp)
     {
@@ -144,7 +103,7 @@ public class BinarySearchTree {
         if (root ==null) //root is empty insert here
         {
             root = newNode;
-            System.out.println("Added root " + root.data);
+//            System.out.println("Added root " + root.data);
         }
         else
         {
@@ -157,7 +116,7 @@ public class BinarySearchTree {
                     current = current.leftChild;
                     if (current == null) //we have reached where to insert the node
                     {
-                        System.out.println("Adding " + temp + " to left of " + parent.data);
+//                        System.out.println("Adding " + temp + " to left of " + parent.data);
                         parent.leftChild = newNode;
                         return;
                     }
@@ -167,7 +126,7 @@ public class BinarySearchTree {
                     current = current.rightChild;
                     if (current == null) //we have reached where to insert the node
                     {
-                        System.out.println("Adding "  + newNode.data + " to right of " + parent.data);
+//                        System.out.println("Adding "  + newNode.data + " to right of " + parent.data);
                         parent.rightChild = newNode;
                         return;
                     }
@@ -187,10 +146,6 @@ public class BinarySearchTree {
         binaryTree.addNode(6);
         if (binaryTree.findNode(8))
             System.out.println("node exists");
-        Node lca = binaryTree.lowestCommonAncestor(binaryTree.root,1, 7);
-        System.out.println("lca is: " + lca.data);
-        binaryTree.inOrder(binaryTree.root);
-        binaryTree.levelOrder(binaryTree.root);
         System.out.print("\n");
         System.out.println(binaryTree.getHeight(binaryTree.root));
         topView(binaryTree.root);
