@@ -26,11 +26,6 @@ public class HouseBurglar {
             dp[i] = Math.max(dp[i-1],value[i-1] + dp[i-2]);
         }
 
-//        for(int i = 0; i < dp.length; i++)
-//        {
-//            System.out.print(dp[i] + " ");
-//        }
-
         return dp[dp.length-1];
     }
 
