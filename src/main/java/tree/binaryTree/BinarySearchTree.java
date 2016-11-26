@@ -1,7 +1,8 @@
-package tree;
+package tree.binaryTree;
+
+import tree.Node;
 
 import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Stack;
 
 /**
@@ -19,21 +20,6 @@ public class BinarySearchTree {
         this.root = root;
     }
 
-    public boolean findNode(int temp)
-    {
-        Node current = root;
-        while(current.data != temp)
-        {
-            if(current.data > temp)
-                current = current.leftChild;
-            else
-                current = current.rightChild;
-            if (current == null)
-                return false;
-        }
-        return true;
-
-    }
 
 
     /* Compute the "maxDepth" of a tree -- the number of
@@ -95,6 +81,23 @@ public class BinarySearchTree {
     }
 
 
+    public int findNode(Node root, int temp)
+    {
+        Node current = root;
+        while(current.data != temp)
+        {
+            if(current.data > temp)
+                current = current.leftChild;
+            else
+                current = current.rightChild;
+            if (current == null)
+                return -1;
+        }
+        return current.data;
+
+    }
+
+
     public void addNode(int temp)
     {
         Node newNode = new Node();
@@ -144,10 +147,9 @@ public class BinarySearchTree {
         binaryTree.addNode(1);
         binaryTree.addNode(3);
         binaryTree.addNode(6);
-        if (binaryTree.findNode(8))
-            System.out.println("node exists");
         System.out.print("\n");
         System.out.println(binaryTree.getHeight(binaryTree.root));
+        System.out.println(binaryTree.findNode(binaryTree.root,3));
         topView(binaryTree.root);
     }
 

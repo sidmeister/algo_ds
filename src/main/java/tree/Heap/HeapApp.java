@@ -1,4 +1,6 @@
-package tree;
+package tree.Heap;
+
+import tree.Node;
 
 /**
  * Created by srathi on 11/18/16.

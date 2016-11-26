@@ -1,5 +1,8 @@
-package tree;
+package tree.binaryTree;
 
+
+import tree.Node;
+import tree.binaryTree.BinarySearchTree;
 
 import java.util.LinkedList;
 import java.util.Stack;

@@ -1,4 +1,7 @@
-package tree;
+package tree.binaryTree;
+
+import tree.Node;
+
 
 /**
  * Created by srathi on 11/25/16.

@@ -1,4 +1,4 @@
-package tree;
+package recursion;
 
 /**
  * Created by srathi on 11/23/16.
