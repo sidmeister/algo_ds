@@ -17,16 +17,16 @@ import java.util.ArrayList;
  **/
 
 
-class Obj
+class CheggObj
 {
 int timestamp;
 int value;
 
-    public Obj()
+    public CheggObj()
     {
     }
 
-public Obj(int t, int v)
+public CheggObj(int t, int v)
 {
     this.timestamp = t;
     this.value = v;
@@ -35,10 +35,10 @@ public Obj(int t, int v)
 
 public class MergeChegg {
 
-        public static ArrayList<Obj> mergesort(ArrayList<Obj> A,ArrayList<Obj> B)
+        public static ArrayList<CheggObj> mergesort(ArrayList<CheggObj> A,ArrayList<CheggObj> B)
         {
             int aptr = 0, bptr = 0;
-            ArrayList<Obj> sorted = new ArrayList<>();
+            ArrayList<CheggObj> sorted = new ArrayList<>();
             while ( aptr < A.size() && bptr < B.size())
             {
                 if (A.get(aptr).timestamp < B.get(bptr).timestamp)
@@ -49,7 +49,7 @@ public class MergeChegg {
                 }
                 else if (A.get(aptr).timestamp == B.get(bptr).timestamp)
                 {
-                    Obj t = new Obj();
+                    CheggObj t = new CheggObj();
                     t.timestamp = A.get(aptr).timestamp ;
                     t.value = A.get(aptr).value + B.get(bptr).value ;
                     sorted.add(t);
@@ -83,17 +83,17 @@ public class MergeChegg {
     public static void main (String[] args)
     {
         int i =0;
-        ArrayList<Obj> A = new ArrayList<>();
-        ArrayList<Obj> B = new ArrayList<>();
-            A.add(new Obj(0, 17));
-            A.add(new Obj(2, 7));
-            A.add(new Obj(7, 7));
-            A.add(new Obj(10, 4));
+        ArrayList<CheggObj> A = new ArrayList<>();
+        ArrayList<CheggObj> B = new ArrayList<>();
+            A.add(new CheggObj(0, 17));
+            A.add(new CheggObj(2, 7));
+            A.add(new CheggObj(7, 7));
+            A.add(new CheggObj(10, 4));
 
-        B.add(new Obj(2, 3));
-        B.add(new Obj(8, 8));
-        ArrayList<Obj> C = mergesort(A,B);
-       for (Obj t : C)
+        B.add(new CheggObj(2, 3));
+        B.add(new CheggObj(8, 8));
+        ArrayList<CheggObj> C = mergesort(A,B);
+       for (CheggObj t : C)
        {
            System.out.println(t.timestamp + "," + t.value);
        }

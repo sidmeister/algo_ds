@@ -15,7 +15,7 @@ public class PowerSet {
     }
 
     public static void main(String[] args) {
-        int[] a = new int[]{1,2,3,4};
+        int[] a = new int[]{1,2};
         powerSet(a);
     }
 }

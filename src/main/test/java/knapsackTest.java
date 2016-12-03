@@ -1,4 +1,6 @@
 
+import dynamicProgramming.EggDrop;
+import dynamicProgramming.MaximumSubArray;
 import dynamicProgramming.knapsack;
 import org.junit.Assert;
 import org.junit.Test;
@@ -26,6 +28,24 @@ public class knapsackTest {
         wt = new int[]{3, 4, 5, 6};
         total_wt = 10;
         Assert.assertEquals(90,k.maxValue(value,wt,total_wt));
+
+    }
+
+    @Test
+    public void testMaxSubArrayDp()
+    {
+        MaximumSubArray maximumSubArray = new MaximumSubArray();
+        int[] arr = new int[]{-2,1,-3,4,-1,2,1,-5,4};
+        Assert.assertEquals(6,maximumSubArray.getMaximumSub(arr));
+    }
+
+    @Test
+    public void testEggMaxValue()
+    {
+        EggDrop k = new EggDrop();
+        int eggs = 2;
+        int floors = 36;
+        Assert.assertEquals(8,k.minAttemps(eggs,floors));
 
     }
 

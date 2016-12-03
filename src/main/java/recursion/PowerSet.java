@@ -19,9 +19,9 @@ public class PowerSet {
                 ArrayList<ArrayList<Integer>> moresubsets = new ArrayList<>();
                 for (ArrayList<Integer> subset : allsubsets) {
                     ArrayList<Integer> newsubset = new ArrayList<Integer>();
-                    newsubset.addAll(subset); //
+                    allsubsets.add(subset); //
                     newsubset.add(item);
-                    moresubsets.add(newsubset);
+                    allsubsets.add(newsubset);
                 }
                 allsubsets.addAll(moresubsets);
             }

@@ -13,13 +13,24 @@ public class CountingSort {
         for (int i =0; i < k; i++)
             count[i] = 0;
 
+        /*
+        Take a count array to store the count of each unique object.
+         */
+
         for (int i=0; i <n; i++)
             count[A[i]] = count[A[i]] + 1;
 
-
+        /*Modify the count array such that each element at each index
+        stores the sum of previous counts.
+        */
 
         for (int i =1; i < k ; i++)
             count[i] = count[i] + count[i-1];
+
+        /*
+         The modified count array indicates the position of each object in
+        the output sequence.
+         */
 
         for (int i =0 ;i <n; i++)
         {

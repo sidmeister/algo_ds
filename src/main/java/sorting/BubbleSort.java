@@ -19,6 +19,11 @@ class ArraySub{
         numelem ++;
     }
 
+    public int length()
+    {
+        return numelem;
+    }
+
     public void display()             // displays array contents
     {
         for(int j=0; j<numelem; j++)       // for each element,

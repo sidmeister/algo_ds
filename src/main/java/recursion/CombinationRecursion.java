@@ -11,21 +11,24 @@ public class CombinationRecursion {
     public static void pickComb(int n, int k, String seq,char letter, int evalsize)
     {
        // System.out.println(seq);
-        if (n < 0 || k < 0 || k > n ) return;
+        if (n <= 0 || k <= 0 || k > n ) {
+            return;
+        }
         seq += Character.toString(letter);
         letter++;
         pickComb( n - 1, k -1,seq,letter,evalsize); //left call
         seq = seq.substring(0,seq.length() - 1);
-        //System.out.println(seq);
-        if (seq.length() == evalsize) System.out.println(seq + (char)(letter -1));
+
+        if (seq.length() == evalsize)
+            System.out.println(seq + "," + (char)(letter -1));
         pickComb( n - 1, k,seq,letter,evalsize); //right call
     }
 
     public static void main(String[] args) {
 
-        int n = 5, k = 3;
+        int n = 4, k = 2;
         String seq = "";
-        pickComb(n, k, seq, 'A', k-1);
+        pickComb(n, k, seq, '1', k-1);
 
 
     }

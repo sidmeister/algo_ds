@@ -5,6 +5,13 @@ import java.util.Set;
 
 /**
  * Created by srathi on 11/29/16.
+ * Write a function to generate all possible n pairs of balanced parentheses.
+
+ For example, if n=1
+ {}
+ for n=2
+ {}{}
+ {{}}
  */
 public class PrintValidParen {
 

@@ -34,6 +34,24 @@ public class BinaryTree {
         return MAX;
     }
 
+     /*
+    before we delete the root we should delete the left subtree and right subtree
+    1) delete left subtree
+    2) delete right subtree
+    3) delete root;
+
+    so it is postorder traversal
+     */
+
+    public void deleteTree(Node root)
+    {
+        if (root == null)
+            return;
+        deleteTree(root.leftChild);
+        deleteTree(root.rightChild);
+        root = null;
+    }
+
     public int findMax(Node localRoot)
     {
         int max = Integer.MIN_VALUE;
@@ -49,6 +67,27 @@ public class BinaryTree {
             localRoot = list.poll();
         }
         return max;
+    }
+
+    /*
+    1) ht left subtree
+    2) ht right subtree
+    3) delete root;
+
+    so it is preorder traversal
+     */
+
+    public static int height(Node root)
+    {
+        if (root == null)
+            return 0;
+        int leftht= height(root.leftChild);
+        int rightht = height(root.rightChild);
+        if (leftht > rightht)
+            return (leftht + 1);
+        else
+            return (rightht + 1);
+
     }
 
     public void addNode(int temp) {

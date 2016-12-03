@@ -78,6 +78,46 @@ public class TreeTraversals {
         }
     }
 
+    /*
+     in level order traversal, we visit the nodes level by level from left to right.
+     You only have to complete the function.
+     For example:
+
+     1
+     /      \
+     2        3
+     / \    /  \
+     4   5  6  7
+
+     For the above tree, the output should  is  4 5 6 7 2 3 1
+
+     */
+
+    public void levelOrderReverse(Node root)
+    {
+        if (root == null)
+            return;
+        LinkedList<Node> list = new LinkedList<>();
+        list.add(root);
+        Stack<Node> stack = new Stack<>();
+        while (!list.isEmpty())
+        {
+            root = list.pop();
+            if (root.rightChild != null)
+                list.add(root.rightChild);
+            if (root.leftChild != null)
+                list.add(root.leftChild);
+            stack.push(root);
+        }
+
+        while (!stack.isEmpty())
+        {
+            System.out.print(stack.pop().data + " ");
+        }
+    }
+
+
+
      /*
 
     1. Call itself to traverse the node’s left subtree.

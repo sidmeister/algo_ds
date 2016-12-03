@@ -50,14 +50,6 @@ public class knapsack
 
     public static void main(String[] args) {
 
-//        int[] value = new int[]{1,4,5,7};
-//        int[] wt = new int[]{1,3,4,5};
-//        int total_wt = 7;
-
-//        int[] value = new int[]{60,100,120};
-//        int[] wt = new int[]{10,20,30};
-//        int total_wt = 50;
-
         int value[] = new int[]{50, 40, 10, 30};
         int wt[] = new int[]{3, 4, 5, 6};
         int total_wt = 10;

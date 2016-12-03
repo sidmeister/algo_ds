@@ -1,6 +1,6 @@
 package sorting;
 
-import tree.Heap;
+import tree.Heap.Heap;
 import tree.Node;
 
 /**

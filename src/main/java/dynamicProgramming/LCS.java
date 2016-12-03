@@ -10,15 +10,23 @@ public class LCS {
 
     public static int LCS(String [] str1,String [] str2, int x, int y)
     {
-       System.out.println("entering with x:" + x + " y:" + y );
        int lcs;
-       if ( x == 0 || y == 0 )
-           return 0;
-        if (str1[x-1].equals(str2[y-1]))
-            lcs = 1 + LCS(str1,str2,x-1,y-1);
-        else
-            lcs = Math.max(LCS(str1,str2,x-1,y),LCS(str1,str2,x,y-1));
-        return lcs;
+
+
+       int[][] lcsdp = new int[x+1][y+1];
+        for(int i = 0; i < str1.length; i++)
+        {
+            for (int j=0; j<str2.length; j++)
+            {
+                if ( x == 0 || y == 0 )
+                    lcsdp[x][y] = 0;
+                else if (str1[x-1].equals(str2[y-1]))
+                    lcsdp[x][y] = 1 + LCS(str1,str2,x-1,y-1);
+                else lcsdp[x][y] = Math.max(LCS(str1,str2,x-1,y),LCS(str1,str2,x,y-1));
+            }
+        }
+
+        return lcsdp[x][y];
 
     }
 

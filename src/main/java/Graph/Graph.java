@@ -7,10 +7,10 @@ import stack_queue.Stack;
  */
 public class Graph {
 
-    private static final int MAX_VERTS = 20;
-    private Vertex[] vertices;
-    private int[][] adj_matrix;
-    private int nVerts;
+    public static final int MAX_VERTS = 10;
+    public Vertex[] vertices;
+    public int[][] adj_matrix;
+    public int nVerts;
 
     public Graph()
     {
@@ -21,6 +21,8 @@ public class Graph {
             for(int k=0; k<MAX_VERTS; k++) // matrix to 0
                 adj_matrix[j][k] = 0;
     }
+
+
 
 
     public boolean addVertex(Character label)
@@ -41,12 +43,16 @@ public class Graph {
     public void displayAdjMatrix()
     {
 
-        for(int j=0; j<MAX_VERTS; j++) // set adjacency
+        for(int j=0; j<nVerts; j++) // set adjacency
         {
             System.out.print("\n");
-            for (int k = 0; k < MAX_VERTS; k++) // matrix to 0
+            for (int k = 0; k < nVerts; k++) // matrix to 0
                 System.out.print(adj_matrix[j][k] + " ");
         }
+    }
+
+    public void adddirectedEdge(int start, int end){
+        adj_matrix[start][end] = 1;
     }
 
     public void addEdge(int start, int end){
