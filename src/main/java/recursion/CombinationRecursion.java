@@ -26,9 +26,9 @@ public class CombinationRecursion {
 
     public static void main(String[] args) {
 
-        int n = 4, k = 2;
+        int n = 3, k = 2;
         String seq = "";
-        pickComb(n, k, seq, '1', k-1);
+        pickComb(n, k, seq, 'a', k-1);
 
 
     }

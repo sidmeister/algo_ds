@@ -13,7 +13,7 @@ public class KnapsackProblem {
     static  int[] given_weights = new int[] {11,8,7,6,5};
     public static boolean  knapsack(int tgt_weight, int index)
     {
-       boolean complete = false;
+        boolean complete = false;
         if (index == given_weights.length) return false;
 
         int curr_wt = given_weights[index];

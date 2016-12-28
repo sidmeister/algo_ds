@@ -18,7 +18,7 @@ public class HeapSort {
         }
         System.out.print("Unsorted:");
         heap.displayHeapasArray(); //display
-//        heap.displayHeap();
+        heap.displayHeap();
 
 
         for (int j = (size -1)/2 ; j >= 0 ; j--)

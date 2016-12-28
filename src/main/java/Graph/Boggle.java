@@ -10,8 +10,8 @@ import java.util.Map;
  Boggle (Find all possible words in a board of characters)
 
  Given a dictionary, a method to do lookup in dictionary and a M x N board where every cell has one character.
- Find all possible words that can be formed by a sequence of adjacent charactersNote that we can move to
- any of 8 adjacent characters, but a word should not have multiple instances of same cell.
+ Find all possible words that can be formed by a sequence of adjacent characters
+ Note that we can move to any of 8 adjacent characters, but a word should not have multiple instances of same cell.
  */
 public class Boggle {
 

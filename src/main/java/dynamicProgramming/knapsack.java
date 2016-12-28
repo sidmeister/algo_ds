@@ -36,6 +36,9 @@ public class knapsack
         return dp[value.length][total_wt];
     }
 
+
+
+
     public static void display(int [][] dp)
     {
         System.out.print("\n");

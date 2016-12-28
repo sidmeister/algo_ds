@@ -9,6 +9,17 @@
 public class GetPairForSum {
 
     public static void main(String[] args) {
-        System.out.println(-8%6);
+        int sum = 16;
+        int[] arr = new int[] {1, 4, 45, 6, 10, -8};
+        boolean[] hashmap = new boolean[100];
+        for (int i =0; i< arr.length; i++ )
+        {
+            int temp = sum - arr[i];
+            if(hashmap[temp] == true)
+            {
+                System.out.print(i + "," + temp);
+                hashmap[arr[i]] = true;
+            }
+        }
     }
 }

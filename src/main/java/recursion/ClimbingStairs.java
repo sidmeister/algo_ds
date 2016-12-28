@@ -24,7 +24,7 @@ public class ClimbingStairs {
     }
 
     public static void main(String[] args) {
-        int number_of_stairs = 5;
+        int number_of_stairs = 50;
         System.out.println(findWays(number_of_stairs));
     }
 }

@@ -1,3 +1,5 @@
+package dynamicProgramming;
+
 /**
  * Created by srathi on 11/22/16.
  * Say you have an array for which the ith element is the price of a given stock on day i.

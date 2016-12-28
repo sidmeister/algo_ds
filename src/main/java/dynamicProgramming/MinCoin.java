@@ -4,6 +4,8 @@ import sun.nio.cs.ext.MacHebrew;
 
 /**
  * Created by srathi on 9/1/16.
+ * Objec­tive: Given a amount ‘A’ and n coins,   v1<v2<v3<.….……<vn .
+ * Write a pro­gram to find out minimum numbers of coins required to make the change for the amount ‘A’.
  */
 public class MinCoin {
 

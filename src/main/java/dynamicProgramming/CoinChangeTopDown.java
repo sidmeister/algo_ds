@@ -2,6 +2,8 @@ package dynamicProgramming;
 
 /**
  * Created by srathi on 12/3/16.
+ * Objective: Given a amount ‘A’ and n coins,   v1<v2<v3<.….……<vn .
+ * Write a pro­gram to find out minimum numbers of coins required to make the change for the amount ‘A’
  */
 public class CoinChangeTopDown {
 
@@ -33,8 +35,8 @@ public class CoinChangeTopDown {
     public static void main(String[] args) {
         //int amount = 10,cnt;
         //int[] coin_denom = new int[]{2,5,3,6};
-        int sum = 6;
-        int[] coin = new int[]{2,3,6,7};
+        int sum = 4;
+        int[] coin = new int[]{2,5,3,6};
         int[] s = new int[sum + 1];
         s[0] = 0;
         System.out.println(minCoin(sum,coin,s));
