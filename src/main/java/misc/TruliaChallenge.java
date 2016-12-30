@@ -9,66 +9,31 @@ package misc;
  the result could be 10, 6, 20, 3, 7, 9, 9*/
 
 public class TruliaChallenge {
-
-
-
-        public static void main(String[] args) {
-
+    public static void main(String[] args) {
             TruliaChallenge seq=new TruliaChallenge();
-
-            int[] a={10,3,6,7,9,9,20};
-
+            int[] a={10, 3, 6, 7, 9, 9, 20};
             int start=0;
-
             int end=a.length-1;
-
             int[] output=seq.evenOddSequence(a,start,end);
-
-            for(int i=0;i<output.length;i++) System.out.print(output[i]+" ");
-
-
-
+            for(int i=0;i<output.length;i++)
+                System.out.print(output[i]+" ");
         }
 
 
 
         private int[] evenOddSequence(int[] a, int start, int end) {
-
             int temp;
-
-            for(int i=0;i<a.length &&start<end;i++)
-
-            {
-
-                if(a[start]%2==0)
-
-                {
-
+            for(int i=0;i<a.length &&start<end;i++) {
+                if(a[start]%2==0) {
                     start++;
-
                 }
-
-                else
-
-                {
-
-
+                else {
                     temp=a[end];
-
                     a[end]=a[start];
-
                     a[start]=temp;
-
                     end--;
-
-                    start++;
-
                 }
-
             }
-
             return a;
-
         }
-
 }

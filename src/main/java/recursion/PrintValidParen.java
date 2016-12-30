@@ -50,7 +50,7 @@ public class PrintValidParen {
     }
 
     public static void main(String[] args) {
-        int n = 2;
+        int n = 3;
         Set<String> f = genParen(n);
         for(String str: f)
             System.out.println(str);
