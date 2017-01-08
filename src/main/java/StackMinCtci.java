@@ -87,7 +87,7 @@ class StackSMin {
 }
 
 
-public class StackMin {
+public class StackMinCtci {
 
     public static void main(String[] args) {
 

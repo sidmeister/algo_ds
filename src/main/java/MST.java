@@ -5,13 +5,13 @@
  // to run this program: C>java MSTApp
  ////////////////////////////////////////////////////////////////
  */
-class StackX
+class MSTStackX
 {
 private final int SIZE = 20;
 private int[] st;
 private int top;
 // -------------------------------------------------------------
-public StackX() // constructor
+public MSTStackX() // constructor
         {
         st = new int[SIZE]; // make array
         top = -1;
@@ -37,7 +37,7 @@ class MSTGraph
     private Vertex vertexList[]; // list of vertices
     private int adjMat[][]; // adjacency matrix
     private int nVerts; // current number of vertices
-    private StackX theStack;
+    private MSTStackX theStack;
     // -------------------------------------------------------------
     MSTGraph() // constructor
     {
@@ -48,7 +48,7 @@ class MSTGraph
         for(int j=0; j<MAX_VERTS; j++) // set adjacency
             for(int k=0; k<MAX_VERTS; k++) // matrix to 0
                 adjMat[j][k] = 0;
-        theStack = new StackX();
+        theStack = new MSTStackX();
     } // end constructor
     // -------------------------------------------------------------
     public void addVertex(char lab)

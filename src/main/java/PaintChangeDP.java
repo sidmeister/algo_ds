@@ -113,7 +113,7 @@ class PaintHouse {
     }
 }
 
-    public class PaintChange {
+    public class PaintChangeDP {
         public static void main(String[] args) {
             int[][] cost = new int[][]{{1, 2, 1}, {1, 4, 5}, {2, 6, 1}, {3, 3, 2}};
             PaintHouse paintHouse = new PaintHouse();
