@@ -2,14 +2,23 @@
 /**
  * Created by srathi on 11/19/16.
  */
+
+class HNode {
+
+     public int data;
+     public HNode leftChild; //leftchild
+     public HNode rightChild; //rightChild
+ }
+
+
 public class Heap {
 
-        private Node[] heapArray;
+        private HNode[] heapArray;
         int nElems, maxSize;
 
         public Heap (int size)
         {
-            heapArray = new Node[size];
+            heapArray = new HNode[size];
             nElems = 0;
             maxSize = size;
         }
@@ -32,7 +41,7 @@ public class Heap {
         {
             if(nElems==maxSize) // if array is full,
                 return false; // failure
-            Node newNode = new Node(); // make a new node
+            HNode newNode = new HNode(); // make a new node
             newNode.data = key;
             heapArray[nElems] = newNode; // put it at the end
             trickleUp(nElems++); // trickle it up
@@ -41,7 +50,7 @@ public class Heap {
 
     public boolean insertAt(int index, int key)
     {
-        Node newNode = new Node(); // make a new node
+        HNode newNode = new HNode(); // make a new node
         newNode.data = key;
         heapArray[index] = newNode; // put it at the end
         return true; // success
@@ -61,7 +70,7 @@ public class Heap {
         public void trickleUp(int index)
         {
 
-            Node bottom = heapArray[index];
+            HNode bottom = heapArray[index];
             int parent =  (index-1) / 2;
             while (index > 0 && heapArray[parent].data < bottom.data)
             {
@@ -81,9 +90,9 @@ public class Heap {
 
     */
 
-        public Node remove()
+        public HNode remove()
         {
-            Node root = heapArray[0];
+            HNode root = heapArray[0];
             heapArray[0] = heapArray[--nElems];
             trickleDown(0);
             return root;
@@ -111,7 +120,7 @@ public class Heap {
         public void trickleDown(int index)
         {
             int larger_child;
-            Node top = heapArray[index];
+            HNode top = heapArray[index];
             while (index < nElems/2) //not at the bottom row i.e one child exists
             {
                 int left_child =  2*index + 1;
@@ -174,5 +183,8 @@ public class Heap {
             System.out.println("\n"+dots+dots); // dotted bottom line
         } // end displayHeap()
 
+         public static void main(String[] args) {
+
+        }
 
 }

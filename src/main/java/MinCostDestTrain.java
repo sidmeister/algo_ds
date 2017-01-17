@@ -8,7 +8,9 @@
  Consider the following example:
 
  Input:
- cost[N][N] = { {0, 15, 80, 90},
+ cost[N][N] =
+ {
+ {0, 15, 80, 90},
  {INF, 0, 40, 50},
  {INF, INF, 0, 70},
  {INF, INF, INF, 0}
@@ -23,7 +25,22 @@
  */
 public class MinCostDestTrain {
 
+    public static int mincostrec(int start, int end,boolean[] visited,int[][]cost) {
 
+        if (start == end)
+            return 0;
+        visited[start] = true;
+        System.out.print(cost[start][start+1] + " ");
+        for(int n=0;n<cost[0].length;n++)
+        {
+            if(n > start && visited[n] == false)
+            {
+                mincost(n,end,visited,cost);
+            }
+
+        }
+        return 0;
+    }
 
     public static int mincost(int start, int end,boolean[] visited,int[][]cost) {
 

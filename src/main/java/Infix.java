@@ -10,13 +10,13 @@ import java.io.IOException;
 // to run this program: C>java InfixApp
               // for I/O
     ////////////////////////////////////////////////////////////////
-    class StackX
+    class InfixStackX
     {
         private int maxSize;
         private char[] stackArray;
         private int top;
         //--------------------------------------------------------------
-        public StackX(int s)       // constructor
+        public InfixStackX(int s)       // constructor
         {
             maxSize = s;
             stackArray = new char[maxSize];
@@ -57,7 +57,7 @@ import java.io.IOException;
     ////////////////////////////////////////////////////////////////
     class InToPost                  // infix to postfix conversion
     {
-        private StackX theStack;
+        private InfixStackX theStack;
         private String input;
         private String output = "";
         //--------------------------------------------------------------
@@ -65,7 +65,7 @@ import java.io.IOException;
         {
             input = in;
             int stackSize = input.length();
-            theStack = new StackX(stackSize);
+            theStack = new InfixStackX(stackSize);
         }
         //--------------------------------------------------------------
         public String doTrans()      // do translation to postfix
