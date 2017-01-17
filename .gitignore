@@ -8,6 +8,10 @@
 .idea/vcs.xml
 .idea/jsLibraryMappings.xml
 .idea/compiler.xml
+.idea/encodings.xml
+.idea/misc.xml
+
+algo_ds.iml
 
 # Sensitive or high-churn files:
 .idea/dataSources.ids
