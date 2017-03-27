@@ -3,7 +3,7 @@ import java.util.ArrayList;
 /**
  * Created by srathi on 11/28/16.
  */
-public class PermutationsRec {
+public class PermutationsAnagramRec {
 
     public static ArrayList<String> getPermutations(String str)
     {
@@ -39,7 +39,7 @@ public class PermutationsRec {
     }
 
     public static void main(String[] args) {
-        String test = "abc";
+        String test = "cats";
         System.out.println(getPermutations(test));
     }
 }

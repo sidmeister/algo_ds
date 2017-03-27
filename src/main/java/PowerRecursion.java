@@ -27,15 +27,10 @@ public class PowerRecursion {
     }
 
     public static void main(String[] args) {
-        int x = 3, y = 18;
+        int x = 30, y = 30;
         int c = power (x,y);
         System.out.println(c);
         c = power1 (x,y);
-        System.out.println(c);
-        int p = 2, q = 8;
-        c = power1(p,q);
-        System.out.println(c);
-        c = power(p,q);
         System.out.println(c);
     }
 }

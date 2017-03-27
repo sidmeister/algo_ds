@@ -24,7 +24,7 @@ public class HeapSort {
 
         for (int j = size -1; j >=0; j--)
         {
-            Node biggest = heap.remove();
+            HNode biggest = heap.remove();
             heap.insertAt(j,biggest.data);
         }
 

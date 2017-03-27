@@ -28,7 +28,7 @@ class priorityQueue
     {
         return theHeap.insert(key);
     }
-    public Node remove()
+    public HNode remove()
     {
         return theHeap.remove();
     }
